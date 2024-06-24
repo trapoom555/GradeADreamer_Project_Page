@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bulma css template -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- model viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <title>
+    GradeADreamer
+  </title>
+  <link rel="icon" href="icon.ico">
+</head>
+<body>
+  <section class="section">
+
+  <div class="container has-text-centered">
+    <!-- paper title -->
+    <p class="title is-3"> GradeADreamer: Enhanced Text-to-3D Generation Using Gaussian Splatting and Multi-View Diffusion </p>
+    <!-- publication -->
+    <!-- <p class="subtitle is-4"> ArXiv </p> -->
+    <!-- authors -->
+    <p class="title is-5 mt-2"> 
+      <a href="https://github.com/trapoom555" target="_blank">Trapoom Ukarapol</a>, 
+      <a href="https://github.com/kevinpruvost" target="_blank">Kevin Pruvost</a>
+    </p>
+    <!-- affiliations -->
+    <p class="subtitle is-5"> 
+       Tsinghua University
+    </p>
+
+    <!-- other links -->
+    <div class="is-flex is-justify-content-center">
+      <span class="icon-text mx-1">
+        <a class="button is-dark" href="https://arxiv.org/abs/2406.09850" role="button" target="_blank"> <span class="icon"> <ion-icon name="document-outline"></ion-icon> </span> <span> Arxiv </span>  </a> 
+      </span>
+      <span class="icon-text mx-1">
+        <a class="button is-dark" href="https://github.com/trapoom555/GradeADreamer" role="button" target="_blank"> <span class="icon"> <ion-icon name="logo-github"></ion-icon> </span> <span> Code </span> </a> 
+      </span>
+    </div>
+   
+  </div>
+
+  <!-- main container -->
+  <div class="container is-max-desktop has-text-centered">
+
+    <!-- abstract -->
+    <p class="title is-3 mt-5 has-text-centered"> Abstract </p>
+    <p class="content is-size-6 has-text-left">
+      Text-to-3D generation has shown promising results, yet common challenges such as the Multi-face Janus problem and extended generation time for high-quality assets. In this paper, we address these issues by introducing a novel three-stage training pipeline called <b>GradeADreamer</b>. This pipeline is capable of producing high-quality assets with a total generation time of under 30 minutes using only a single RTX 3090 GPU. Our proposed method employs a Multi-view Diffusion Model, MVDream, to generate Gaussian Splats as a prior, followed by refining geometry and texture using StableDiffusion. Experimental results demonstrate that our approach significantly mitigates the Multi-face Janus problem and achieves the highest average user preference ranking compared to previous state-of-the-art methods.
+    </p>
+    
+    <!-- results -->
+    <p class="title is-3 mt-5 has-text-centered"> Qualitative Results </p>
+
+    <p class="content has-text-centered is-size-5">
+      Our method can generate good quality assets with short amount of time, and less Multi-face Janus problem.
+    </p>
+    <video muted autoplay controls loop> <source src="videos/GradeADreamer_demo.mov" type="video/mp4"> </video>
+
+    <p class="title is-3 mt-5 has-text-centered"> More Results </p>
+    <div class="level">
+      <div class="level-item">
+        <img src="gif/cookies.gif" style="width: 300px; height: 300px;" />
+        <!-- <model-viewer src="meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer> -->
+      </div>
+      <div class="level-item">
+        <img src="gif/pineapple.gif" style="width: 300px; height: 300px;" />
+      </div>
+      <div class="level-item">
+        <img src="gif/sand_castle.gif" style="width: 300px; height: 300px;" />
+      </div>
+    </div>
+
+    <div class="level">
+      <div class="level-item">
+        <img src="gif/astro.gif" style="width: 300px; height: 300px;" />
+      </div>
+      <div class="level-item">
+        <img src="gif/bunny_pancake.gif" style="width: 300px; height: 300px;" />
+      </div>
+    </div>
+
+    <p class="title is-3 mt-5 has-text-centered"> Quantitative Results </p>
+
+    <p class="content has-text-centered is-size-5"></p>
+    We conducted a user study to evaluate our text-to-3D model against other baseline models. The study involved 54 participants who were asked to rank 3D models generated from 15 different prompts in a non-cherry-picked and blinded setting.
+    </p>
+
+    <div class="level mt-5">
+      <div class="level-item">
+        <img src="image/userstudy.png" style="width: 450px; height: 400px;" />
+      </div>
+    </div>
+
+    <p class="content has-text-centered is-size-5"></p>
+      Our method achieved the top average ranking from the user study, and the lowest 3D-FID score.
+    </p>
+
+    <div class="level">
+      <div class="level-item">
+        <img src="image/average_ranking.png" style="width: 500px; height: 170px;" />
+      </div>
+      <div class="level-item">
+        <img src="image/3d_fid_table.png" style="width: 500px; height: 200px;" />
+      </div>
+    </div>
+
+    <p class="content has-text-centered is-size-5"></p>
+      Moreover, the proposed method significantly reduce the Multi-face Janus problem while maintaining low generation time.
+    </p>
+
+    <div class="level">
+      <div class="level-item">
+        <img src="image/multiface_table.png" style="width: 500px; height: 190px;" />
+      </div>
+      <div class="level-item">
+        <img src="image/runtime.png" style="width: 500px; height: 190px;" />
+      </div>
+    </div>
+
+    <!-- citation -->
+    <div class="card mt-4">
+      <header class="card-header">
+        <p class="card-header-title"> Citation </p>
+      </header>
+      <div class="card-content is-size-5 has-text-left">
+<pre><code>@misc{ukarapol2024gradeadreamer,
+  title={GradeADreamer: Enhanced Text-to-3D Generation Using Gaussian Splatting and Multi-View Diffusion}, 
+  author={Trapoom Ukarapol and Kevin Pruvost},
+  year={2024},
+  eprint={2406.09850},
+  archivePrefix={arXiv},
+  primaryClass={id='cs.CV' full_name='Computer Vision and Pattern Recognition' is_active=True alt_name=None in_archive='cs' is_general=False description='Covers image processing, computer vision, pattern recognition, and scene understanding. Roughly includes material in ACM Subject Classes I.2.10, I.4, and I.5.'}
+}</code></pre>
+      </div>
+    </div>
+  </div>
+
+
+  </section>
+</body>
+</html>
